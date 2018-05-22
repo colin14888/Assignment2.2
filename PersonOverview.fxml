@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane maxHeight="400.0" maxWidth="800.0" minHeight="400.0" minWidth="800.0" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.PersonOverviewController">
+   <children>
+      <SplitPane dividerPositions="0.29797979797979796" layoutX="37.0" layoutY="24.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TableView fx:id="personTableView" layoutX="-12.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <HBox layoutX="36.0" layoutY="373.0" spacing="10.0" AnchorPane.leftAnchor="5.0">
+                     <children>
+                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#handleNewPerson" text="Add" />
+                        <Button fx:id="relationButton" mnemonicParsing="false" onAction="#handleRelation" text="Connect" />
+                        <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#handleDeletePerson" text="Delete" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" SplitPane.resizableWithParent="false">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Person Profile:" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                  <GridPane layoutX="14.0" layoutY="45.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="45.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="212.0" minWidth="10.0" prefWidth="109.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="212.0" minWidth="10.0" prefWidth="165.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Name:" />
+                        <Label text="Age:" GridPane.rowIndex="1" />
+                        <Label text="State:" GridPane.rowIndex="2" />
+                        <Label text="Sex:" GridPane.rowIndex="3" />
+                        <Label text="Status:" GridPane.rowIndex="4" />
+                        <Label fx:id="ageLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="nameLabel" GridPane.columnIndex="1" />
+                        <Label fx:id="stateLabel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="sexLabel" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="statusLabel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     </children>
+                  </GridPane>
+                  <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="130.0" layoutX="217.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0">
+                     <image>
+                        <Image url="@../resources/timg.jpg" />
+                     </image></ImageView>
+                  <HBox layoutY="211.0" spacing="20.0" AnchorPane.leftAnchor="0.0">
+                     <children>
+                        <Label text="Find:" />
+                        <ChoiceBox fx:id="choiceBox" prefWidth="150.0">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ChoiceBox>
+                     </children>
+                  </HBox>
+                  <ListView fx:id="listView" layoutX="14.0" layoutY="268.0" prefHeight="150.0" prefWidth="546.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
